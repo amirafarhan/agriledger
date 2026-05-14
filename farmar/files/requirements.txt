@@ -1,0 +1,35 @@
+# =============================================================================
+# requirements.txt — Fruit Classifier Dependencies
+# =============================================================================
+# Install with:   pip install -r requirements.txt
+#
+# GPU training (highly recommended for speed):
+#   pip install tensorflow[and-cuda]   # Linux + NVIDIA GPU
+#   or use the official TF Docker image: tensorflow/tensorflow:latest-gpu
+#
+# CPU-only:
+#   pip install tensorflow
+# =============================================================================
+
+# Core ML
+tensorflow>=2.14.0          # or tensorflow-cpu if no GPU
+keras>=2.14.0               # bundled with TF; listed for clarity
+
+# Data & numerics
+numpy>=1.24.0
+scikit-learn>=1.3.0         # confusion matrix, classification report, roc_curve
+
+# Visualisation
+matplotlib>=3.7.0
+seaborn>=0.12.0             # optional: nicer confusion matrix heatmaps
+
+# Image processing (optional — used for offline augmentation checks)
+Pillow>=10.0.0
+
+# API serving (optional — only needed if deploying predict.py as a service)
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6     # required by FastAPI for file uploads
+
+# Utilities
+tqdm>=4.66.0                # progress bars
